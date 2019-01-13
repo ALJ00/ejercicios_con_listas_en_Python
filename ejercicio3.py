@@ -1,29 +1,19 @@
-lista = ["hola", 1, 2, "adios"]
+lista = ["hola", "1", "2", "adios"]
 print(lista)
 print("---------------------------")
 
-contenido = False
+
+
+elemento = input("¿Qué elemento deseas buscar?")
 
 while True:
-    try:
-        consulta = int(input("¿qué elemento quieres?"))
-
-        print = lista.pop(lista.index(consulta))
-
-        elemento2 = int(input("Introduce un nuevo elemento"))
-
-        lista.insert(lista.index(consulta),elemento2)
-
-
-
+    if elemento in lista:
+        nuevo_elemento = input("¿Elemento encontrado, qué nuevo elemento deseas introducir?")
+        indice = lista.index(elemento)
+        lista.pop(indice)
+        lista.insert(indice, nuevo_elemento)
         break
-    except ValueError:
-        print('Elemento inexistente, introduce otro elemento...!')
-
-
-
-
-
-
+    else:
+        elemento = input("Elemento no encontrado, introduce un nuevo dato por favor...")
 
 print(lista)
